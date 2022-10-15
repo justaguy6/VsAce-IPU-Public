@@ -1,0 +1,8 @@
+singUP -26 220
+singRIGHT -37 -65
+singLEFT 80 -90
+singDOWN -40 -60
+singUPmiss -26 220
+singRIGHTmiss -37 -65
+singLEFTmiss 80 -190
+singDOWNmiss -40 -60

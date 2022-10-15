@@ -1,0 +1,10 @@
+Happy:Mace:That was great! I wanna do it again.
+Smug:Metro:And I thought I had a lot of stamina.
+Neutral:Metro:Maybe later though, I'm starving.
+Happy:Mace:Want to grab a bite to eat? McDemon's maybe?
+Happy:Metro:Sure.
+Happy:Mace:I'll see if Maku wants to join. Triple Lunch Date!
+Flushed:Metro:Okay, but she has to sit between us. I can't let the rest of the team know about you and me yet.
+Neutral:Metro:I'm not sure how some of them would react.
+Annoyed:Metro:ESPECIALLY Terrus.
+Happy:Mace:Pfft, alright, I get it. Come on, let's go!

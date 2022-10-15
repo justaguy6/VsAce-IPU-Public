@@ -1,0 +1,4 @@
+Happy:dad:Wow, you have a nice voice!
+Happy:Maku:Thanks, you too! You sound a lot like one of my boyfriends!
+Embarassed:dad:Haha... Well.. Anyways I should probably figure out where the hell I am.
+Giggling:Maku:Good luck!
