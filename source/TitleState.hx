@@ -38,12 +38,12 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if sys
+		#if !android
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 		#end
 
-		var customUpdateScreen = FileSystem.exists('updateScreen.hscript');
+		var customUpdateScreen = Assets.exists('updateScreen.hscript');
 
 		//#if CHECK_FOR_UPDATES
 		if(!closedState || customUpdateScreen) {
