@@ -2,8 +2,11 @@ package;
 
 #if windows
 @:headerCode("#include <windows.h>")
-#elseif linux
-@:headerCode("#include <stdio.h>")
+#elseif LinuxSystems
+@:headerCode('
+#include <stdio.h>
+#include <string.h>
+')
 #elseif mac
 @:headerCode("#include <sys/sysctl.h>")
 #end
@@ -16,7 +19,7 @@ class ExternalCode {
 		GetPhysicallyInstalledSystemMemory(&allocatedRAM);
 		return (allocatedRAM / 1024);
 	")
-	#elseif linux
+	#elseif LinuxSystems
 	@:functionCode('
 		FILE *meminfo = fopen("/proc/meminfo", "r");
 
