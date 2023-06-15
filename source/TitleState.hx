@@ -182,7 +182,17 @@ class TitleState extends MusicBeatState
 
 	var transitioning:Bool = false;
 
-	var pressedEnter:Bool = controls.ACCEPT;
+	
+			
+	override function update(elapsed:Float)
+	{
+		if (FlxG.sound.music != null)
+			Conductor.songPosition = FlxG.sound.music.time;
+
+		if (FlxG.keys.justPressed.F)
+			FlxG.fullscreen = !FlxG.fullscreen;
+		
+		var pressedEnter:Bool = controls.ACCEPT;
 
 		#if mobile
 		for (touch in FlxG.touches.list)
@@ -193,14 +203,6 @@ class TitleState extends MusicBeatState
 			}
 		}
 		#end
-			
-	override function update(elapsed:Float)
-	{
-		if (FlxG.sound.music != null)
-			Conductor.songPosition = FlxG.sound.music.time;
-
-		if (FlxG.keys.justPressed.F)
-			FlxG.fullscreen = !FlxG.fullscreen;
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
