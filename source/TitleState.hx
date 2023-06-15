@@ -182,6 +182,18 @@ class TitleState extends MusicBeatState
 
 	var transitioning:Bool = false;
 
+	var pressedEnter:Bool = controls.ACCEPT;
+
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				pressedEnter = true;
+			}
+		}
+		#end
+			
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music != null)
@@ -190,7 +202,7 @@ class TitleState extends MusicBeatState
 		if (FlxG.keys.justPressed.F)
 			FlxG.fullscreen = !FlxG.fullscreen;
 
-		if (controls.ACCEPT && !transitioning && skippedIntro)
+		if (pressedEnter && !transitioning && skippedIntro)
 		{
 			if (FlxG.save.data.flashing)
 				titleText.animation.play('press');
