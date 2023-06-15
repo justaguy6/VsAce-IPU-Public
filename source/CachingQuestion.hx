@@ -25,7 +25,7 @@ class CachingQuestion extends MusicBeatState {
 			Init.totalRam = 4096/2;
 		}
 
-		var header = new Alphabet(0, 50, "você gostaria de ativar o Caching?", true, 0.05, 0.75);
+		var header = new Alphabet(0, 50, "voce gostaria de ativar o Caching?", true, 0.05, 0.75);
 		header.screenCenter(X);
 		add(header);
 
@@ -40,8 +40,8 @@ class CachingQuestion extends MusicBeatState {
 
 		yesGroup = new FlxSpriteGroup();
 		var yes = new Alphabet(0, 0, "Yes", true, 0.05, 1);
-		var yesinfo = new Alphabet(0, yes.height + 5, "Uses around 4 gb of ram", true, 0.05, 0.50);
-		var yesinfo2 = new Alphabet(0, yesinfo.y + yesinfo.height + 5, "has Faster Loading", true, 0.05, 0.50);
+		var yesinfo = new Alphabet(0, yes.height + 5, "usa por volta de 4GB RAM", true, 0.05, 0.50);
+		var yesinfo2 = new Alphabet(0, yesinfo.y + yesinfo.height + 5, "carregamento rapido", true, 0.05, 0.50);
 
 		yesColor = [yes, yesinfo, yesinfo2];
 
@@ -54,12 +54,12 @@ class CachingQuestion extends MusicBeatState {
 		yesGroup.screenCenter(Y);
 
 		if(forceBad || Init.totalRam < 4096) {
-			var bad = new Alphabet(0, badY, "Não recomendado para Este Celular ", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Nao recomendado para Este Celular", true, 0.05, 0.45);
 			bad.color = 0xFFff0000;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
 		} else {
-			var bad = new Alphabet(0, badY, "Não recomendado para este Celular ", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Nao recomendado para este Celular ", true, 0.05, 0.45);
 			bad.color = 0xFF00ff00;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
@@ -77,8 +77,8 @@ class CachingQuestion extends MusicBeatState {
 
 		noGroup = new FlxSpriteGroup();
 		var no = new Alphabet(0, 0, "No", true, 0.05, 1);
-		var noinfo = new Alphabet(0, no.height + 5, "Uses around 1 gb of ram", true, 0.05, 0.50);
-		var noinfo2 = new Alphabet(0, noinfo.y + noinfo.height + 5, "takes longer to load songs", true, 0.05, 0.50);
+		var noinfo = new Alphabet(0, no.height + 5, "Usa por volta de 1GB RAM", true, 0.05, 0.50);
+		var noinfo2 = new Alphabet(0, noinfo.y + noinfo.height + 5, "demora mais para carregar as músicas", true, 0.05, 0.50);
 
 		noColor = [no, noinfo, noinfo2];
 
