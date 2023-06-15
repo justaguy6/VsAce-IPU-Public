@@ -10,9 +10,8 @@ import flixel.math.FlxRect;
 import haxe.xml.Access;
 import lime.utils.Assets;
 
-#if cpp
-import sys.FileSystem;
-#end
+
+	
 class FileCache
 {
 	public static var instance:FileCache;
@@ -42,14 +41,14 @@ class FileCache
 
 	function new()
 	{
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
+		for (i in HSys.readDirectory("assets/songs"))
 		{
 			if(StringTools.endsWith(i, "txt")) continue;
 
 			music.push(i);
 		}
 
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/sounds")))
+		for (i in HSys.readDirectory("assets/shared/sounds"))
 		{
 			if(StringTools.endsWith(i, ".ogg")) {
 				if(blacklistSounds.contains(i)) continue;
@@ -186,7 +185,7 @@ class FileCache
 		sharedSprites.set('shared_notesDefault', 'NOTE_assets');
 		sharedSprites.set('shared_notesIce', 'IceArrow_Assets');
 
-		// Generic Character Assets
+		/*Generic Character Assets
 		sharedSprites.set('shared_bf-cold', 'characters/bf-cold');
 		sharedSprites.set('shared_bf-retro', 'characters/bf-retro');
 		sharedSprites.set('shared_bf-ace', 'characters/bf-ace');
@@ -207,7 +206,7 @@ class FileCache
 		sharedSprites.set('shared_gf', 'characters/gf');
 		sharedSprites.set('shared_gf-retro', 'characters/gf-retro');
 		sharedSprites.set('shared_gf-minus', 'characters/gf-minus');
-		sharedSprites.set('shared_sakuroma', 'characters/sakuroma');
+		sharedSprites.set('shared_sakuroma', 'characters/sakuroma');*/
 
 		sys.thread.Thread.create(() -> {
 			for(i in sharedSprites.keys())
