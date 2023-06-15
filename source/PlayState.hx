@@ -1482,6 +1482,11 @@ class PlayState extends MusicBeatState
 		currentTimingShown.borderColor = FlxColor.BLACK;
 		currentTimingShown.size = 20;
 		currentTimingShown.active = false;
+		
+		#if android
+                addAndroidControls();
+                androidControls.visible = true;
+                #end	
 
 		startingSong = true;
 
@@ -2810,7 +2815,7 @@ class PlayState extends MusicBeatState
 
 		//scoreTxt.screenCenter(X);
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -3832,8 +3837,7 @@ class PlayState extends MusicBeatState
 			//releaseArray = [false, false, false, false];
 		}
 
-		var anas:Array<Ana> = [null, null, null, null];
-
+		
 		// HOLDS, check for sustain notes
 		if (holdArray.contains(true) && generatedMusic)
 		{
@@ -3845,14 +3849,8 @@ class PlayState extends MusicBeatState
 			});
 		}
 
-		if(scoreScreenEnabled) {
-			for (i in 0...pressArray.length)
-				if (pressArray[i])
-					anas[i] = new Ana(Conductor.songPosition, null, false, "miss", i);
-		}
-
-		if (KeyBinds.gamepad && !FlxG.keys.justPressed.ANY)
-		{
+		
+		
 			// PRESSES, check for note hits
 			if (pressArray.contains(true) && generatedMusic)
 			{
@@ -3920,9 +3918,7 @@ class PlayState extends MusicBeatState
 							hit[coolNote.noteData] = true;
 							scoreTxt.color = FlxColor.WHITE;
 							var noteDiff:Float = Conductor.songPosition - coolNote.strumTime;
-							anas[coolNote.noteData].hit = true;
-							anas[coolNote.noteData].hitJudge = Ratings.CalculateRating(noteDiff, Math.floor((PlayStateChangeables.safeFrames / 60) * 1000));
-							anas[coolNote.noteData].nearestNote = [coolNote.strumTime, coolNote.noteData, coolNote.sustainLength];
+							
 							goodNoteHit(coolNote);
 						}
 					}
@@ -3942,11 +3938,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			if(scoreScreenEnabled)
-				for (i in anas)
-					if (i != null)
-						replayAna.anaArray.push(i); // put em all there
-		}
+			
 
 
 		/*if(PlayStateChangeables.botPlay) {
