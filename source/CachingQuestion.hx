@@ -39,7 +39,7 @@ class CachingQuestion extends MusicBeatState {
 		// YES
 
 		yesGroup = new FlxSpriteGroup();
-		var yes = new Alphabet(0, 0, "Yes", true, 0.05, 1);
+		var yes = new Alphabet(0, 0, "Sim", true, 0.05, 1);
 		var yesinfo = new Alphabet(0, yes.height + 5, "usa por volta de 4GB RAM", true, 0.05, 0.50);
 		var yesinfo2 = new Alphabet(0, yesinfo.y + yesinfo.height + 5, "carregamento rapido", true, 0.05, 0.50);
 
@@ -54,12 +54,12 @@ class CachingQuestion extends MusicBeatState {
 		yesGroup.screenCenter(Y);
 
 		if(forceBad || Init.totalRam < 4096) {
-			var bad = new Alphabet(0, badY, "Nao recomendado para Este Celular", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "N recomendado para Este Sistema", true, 0.05, 0.45);
 			bad.color = 0xFFff0000;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
 		} else {
-			var bad = new Alphabet(0, badY, "Nao recomendado para este Celular ", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "N recomendado para este Sistema", true, 0.05, 0.45);
 			bad.color = 0xFF00ff00;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
@@ -76,9 +76,9 @@ class CachingQuestion extends MusicBeatState {
 		// NO
 
 		noGroup = new FlxSpriteGroup();
-		var no = new Alphabet(0, 0, "No", true, 0.05, 1);
+		var no = new Alphabet(0, 0, "Nao", true, 0.05, 1);
 		var noinfo = new Alphabet(0, no.height + 5, "Usa por volta de 1GB RAM", true, 0.05, 0.50);
-		var noinfo2 = new Alphabet(0, noinfo.y + noinfo.height + 5, "demora mais para carregar as músicas", true, 0.05, 0.50);
+		var noinfo2 = new Alphabet(0, noinfo.y + noinfo.height + 5, "Carregamento mais lento", true, 0.05, 0.50);
 
 		noColor = [no, noinfo, noinfo2];
 
@@ -91,7 +91,7 @@ class CachingQuestion extends MusicBeatState {
 		noGroup.screenCenter(Y);
 
 		if(forceBad || Init.totalRam < 4096) {
-			var bad = new Alphabet(0, badY, "Recomendado para este celular", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Recomendado para este Sistema", true, 0.05, 0.45);
 			bad.color = 0xFF00ff00;
 			noGroup.add(bad);
 			bad.centerTo(noGroup, X);
