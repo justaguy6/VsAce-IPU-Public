@@ -52,6 +52,10 @@ class CachingState extends FlxState
 		FileCache.loadFiles();
 		updateLoadingText();
 
+		#if android
+                addVirtualPad(NONE, A);
+                #end
+			
 		super.create();
 	}
 
