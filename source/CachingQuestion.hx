@@ -25,7 +25,7 @@ class CachingQuestion extends MusicBeatState {
 			Init.totalRam = 4096/2;
 		}
 
-		var header = new Alphabet(0, 50, "Do you want to enable caching?", true, 0.05, 0.75);
+		var header = new Alphabet(0, 50, "você gostaria de ativar o Caching?", true, 0.05, 0.75);
 		header.screenCenter(X);
 		add(header);
 
@@ -54,12 +54,12 @@ class CachingQuestion extends MusicBeatState {
 		yesGroup.screenCenter(Y);
 
 		if(forceBad || Init.totalRam < 4096) {
-			var bad = new Alphabet(0, badY, "Not recommended for this pc", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Não recomendado para Este Celular ", true, 0.05, 0.45);
 			bad.color = 0xFFff0000;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
 		} else {
-			var bad = new Alphabet(0, badY, "Recommended for this pc", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Não recomendado para este Celular ", true, 0.05, 0.45);
 			bad.color = 0xFF00ff00;
 			yesGroup.add(bad);
 			bad.centerTo(yesGroup, X);
@@ -91,7 +91,7 @@ class CachingQuestion extends MusicBeatState {
 		noGroup.screenCenter(Y);
 
 		if(forceBad || Init.totalRam < 4096) {
-			var bad = new Alphabet(0, badY, "Recommended for this pc", true, 0.05, 0.45);
+			var bad = new Alphabet(0, badY, "Recomendado para este celular", true, 0.05, 0.45);
 			bad.color = 0xFF00ff00;
 			noGroup.add(bad);
 			bad.centerTo(noGroup, X);
@@ -108,6 +108,10 @@ class CachingQuestion extends MusicBeatState {
 		updateColor(false, true);
 
 		FlxG.mouse.visible = false;
+		
+		#if android
+                addVirtualPad(LEFT_RIGHT, A);
+                #end
 	}
 
 	var isMouseVisible = false;
