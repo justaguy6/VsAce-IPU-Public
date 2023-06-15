@@ -220,6 +220,10 @@ class FreeplayState extends MusicBeatState
 		changeSelection();
 		changeDiff();
 
+		#if android
+                addVirtualPad(LEFT_FULL, A_B);
+                #end
+			
 		super.create();
 	}
 
