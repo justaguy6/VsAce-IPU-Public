@@ -12,7 +12,7 @@ import flixel.tweens.FlxTween;
 
 using StringTools;
 
-class CachingState extends FlxState
+class CachingState extends MusicBeatState 
 {
 	@:keep var barProgress:Float = 0;
 
