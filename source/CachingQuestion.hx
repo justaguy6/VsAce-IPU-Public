@@ -110,7 +110,7 @@ class CachingQuestion extends MusicBeatState {
 		FlxG.mouse.visible = false;
 		
 		#if android
-                addVirtualPad(LEFT_RIGHT, A);
+                addVirtualPad(NONE, A);
                 #end
 	}
 
