@@ -32,9 +32,9 @@ class OptionsMenu extends MusicBeatState
 			/*new MiddlescrollOption("Put your lane in the center or on the right. (FREEPLAY ONLY)"),*/
 			new GhostTapOption("If enabled, you will not lose health or get a miss when you tap a button."),
 			new Judgement("Customize how many frames you have to hit the note."),
-			#if desktop
+			
 			new FPSCapOption("Change the highest amount of FPS you can have."),
-			#end
+			
 			new ScrollSpeedOption("Edit your scroll speed value."),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Millisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to instantly die."),
@@ -47,10 +47,10 @@ class OptionsMenu extends MusicBeatState
 			new HealthBarOption("The color of the healthbar now fits with everyone's icons."),
 			new LaneUnderlayOption("Toggles if the notes have a black background behind them for visibility."),
 			new CamZoomOption("Toggle the camera zoom in-game."),
-			#if desktop
+			
 			new RainbowFPSOption("Change the FPS counter to flash rainbow."),
 			new FPSOption("Turn the FPS counter on or off."),
-			#end
+			
 			new CpuStrums("The CPU's strumline lights up when a note hits it, like Boyfriend's strumline."),
 			new ScoreScreen("Show a list of all your stats at the end of a song/week."),
 			new ShowInput("Display every single input in the score screen."),
@@ -128,6 +128,11 @@ class OptionsMenu extends MusicBeatState
 
 		super.create();
 
+		#if android
+		addVirtualPad(UP_DOWN, A_B_C);
+		virtualPad.y = -24;
+		#end
+			
 		changeSelection(0);
 	}
 
@@ -175,9 +180,9 @@ class OptionsMenu extends MusicBeatState
 				}
 			}
 
-			if (FlxG.keys.justPressed.UP)
+			if (controls.UP_P)
 				changeSelection(-1);
-			if (FlxG.keys.justPressed.DOWN)
+			if (controls.DOWN_P)
 				changeSelection(1);
 
 			var offsetCheck = true;
@@ -223,6 +228,15 @@ class OptionsMenu extends MusicBeatState
 				updateDescription();
 				FlxG.save.flush();
 			}
+			
+			#if android
+		if (virtualPad.buttonC.justPressed) {
+			#if android
+			removeVirtualPad();
+			#end
+			openSubState(new android.AndroidControlsSubState());
+		}
+		#end
 
 			if (controls.ACCEPT)
 			{
