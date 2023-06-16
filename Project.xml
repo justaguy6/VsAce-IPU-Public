@@ -66,6 +66,7 @@
 	<assets path="assets/shared"   library="shared"   exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"   library="shared"   exclude="*.mp3" unless="web"/>
 	<assets path="assets/week-ace" library="week-ace" exclude="*.mp3" unless="web"/>
+	<assets path="assets/credits"  library="credits"    exclude="*.mp3" unless="web"/>
 	<assets path="assets/week-ace" library="week-ace" exclude="*.ogg" if="web"/>
 
 	<assets path='ChangeCaching.bat' rename='ChangeCaching.bat' if="windows"/>
