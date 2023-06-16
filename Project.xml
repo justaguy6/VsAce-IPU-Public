@@ -50,12 +50,14 @@
 	<section if="PRELOAD_ALL">
 		<library name="songs"    preload="true" />
 		<library name="shared"   preload="true" />
+		<library name="credits"   preload="true" />
 		<library name="week-ace"   preload="true" />
 	</section>
 
 	<section if="NO_PRELOAD_ALL">
 		<library name="songs"    preload="false" />
 		<library name="shared"   preload="false" />
+		<library name="credits"   preload="false" />
 		<library name="week-ace"   preload="true" />
 	</section>
 
