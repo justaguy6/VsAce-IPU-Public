@@ -231,8 +231,11 @@ class TitleState extends MusicBeatState
 			});
 		}
 
-		if (controls.ACCEPT && pressedEnter && !skippedIntro && initialized)
+		if (pressedEnter && !skippedIntro && initialized)
+		{
 			skipIntro();
+		}
+
 
 		super.update(elapsed);
 	}
