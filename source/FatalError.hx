@@ -1,4 +1,4 @@
-package;
+package; //Anti thief Made by José XD
 
 import flixel.FlxG;
 import flixel.FlxSprite;
