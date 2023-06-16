@@ -53,7 +53,7 @@ class FatalError extends MusicBeatState
 					FlxG.sound.play(Paths.sound('cancelMenu'));
 					FlxTween.tween(warnText, {alpha: 0}, 1, {
 						onComplete: function (twn:FlxTween) {
-							MusicBeatState.switchState(new TitleState());
+							FlxG.switchState(new TitleState());
 						}
 					});
 				}
