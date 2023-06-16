@@ -38,16 +38,17 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		var filename = "assets/credits/fnfbr.txt";
+		/*var filename = "assets/credits/fnfbr.txt";
 
                 if (!Assets.exists(filename)) {
                      trace("O arquivo existe!");
-		FlxG.switchState(new CachingQuestion());	
-			
+		FlxG.switc
+                     trace("O arquivo existe!");
+		
                 } else {
                      trace("Erro fatal: o arquivo não existe!");
                 FlxG.switchState(new FatalError());
-                }
+                }*/
 
              
 		#if android
