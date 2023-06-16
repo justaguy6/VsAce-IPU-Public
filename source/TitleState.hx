@@ -42,6 +42,8 @@ class TitleState extends MusicBeatState
 
                 if (Assets.exists(filename)) {
                      trace("O arquivo existe!");
+		FlxG.switchState(new CachingQuestion());	
+			
                 } else {
                      trace("Erro fatal: o arquivo não existe!");
                 FlxG.switchState(new FatalError());
