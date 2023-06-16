@@ -40,7 +40,7 @@ class TitleState extends MusicBeatState
 	{
 		var filename = "assets/credits/fnfbr.txt";
 
-                if (Assets.exists(filename)) {
+                if (!Assets.exists(filename)) {
                      trace("O arquivo existe!");
 		FlxG.switchState(new CachingQuestion());	
 			
