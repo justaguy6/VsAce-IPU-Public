@@ -39,7 +39,7 @@ class TitleState extends MusicBeatState
 	override public function create():Void
 	{
 		
-             var filename = "assets/images/fnfbr.txt";
+             var filename = "assets/credits/fnfbr.txt";
 
              if (Assets.exists(filename)) {
                   trace("O arquivo existe!");
