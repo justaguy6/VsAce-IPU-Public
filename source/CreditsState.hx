@@ -367,6 +367,9 @@ class CreditsState extends MusicBeatState
 		add(credit2Sections);
 
 
+		#if android
+                addVirtualPad(LEFT_FULL, A_B);
+                #end
 
 		super.create();
 	}
