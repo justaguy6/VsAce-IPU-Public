@@ -24,12 +24,17 @@ class FatalError extends MusicBeatState
 		add(bg);
 
 		warnText = new FlxText(0, 0, FlxG.width,
-			"opa, parece que o sistema detectou que os créditos foram removidos
-       voce não vai poder jogar sem eles, lamentamos, pressione A para continuar",
+			"oops, if you got to this screen, its because you removed 
+
+the fnfbr.txt file it was not found, press A to Quit the game",
 			32);
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
+		
+		#if android
+                addVirtualPad(NONE, A);
+                #end
 	}
 
 	override function update(elapsed:Float)
